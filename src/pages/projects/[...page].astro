@@ -1,0 +1,61 @@
+---
+import PageLayout from "@/layouts/Base";
+import Pagination from "@/components/Paginator";
+import type { Project, Page, MDXInstance } from "@/types";
+import { getAllTags, sortMDByDate } from "src/util";
+import ProjectPreview from "@/components/ProjectPreview";
+import TagsBar from "@/components/TagsBar";
+
+export async function getStaticPaths({ paginate }) {
+	const allProjects = await Astro.glob<Project>("./*.mdx");
+	const allProjectsByDate = sortMDByDate(allProjects);
+	const allTags = getAllTags(allProjects);
+	return paginate(allProjectsByDate, { props: { allTags }, pageSize: 10 });
+}
+
+export interface Props {
+	page: Page<MDXInstance<Project>>;
+	allTags: string[];
+}
+
+const { page, allTags } = Astro.props as Props;
+
+const meta = {
+	title: "Posts",
+	description: "A collection of posts by me for a starter Astro theme",
+};
+
+const paginationProps = {
+	...(page.url.prev && {
+		prevUrl: {
+			url: page.url.prev,
+			text: `← Previous Posts`,
+		},
+	}),
+	...(page.url.next && {
+		nextUrl: {
+			url: page.url.next,
+			text: `Next Posts →`,
+		},
+	}),
+};
+---
+
+<PageLayout meta={meta}>
+	<h1 class="mb-6 title">Some stuff I've built</h1>
+	<div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
+		<section aria-label="Blog post list">
+			<ul class="text-left space-y-8">
+				{
+					page.data.map((p) => (
+						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
+							<ProjectPreview project={p} as="h2" withDesc />
+						</li>
+					))
+				}
+			</ul>
+			<Pagination {...paginationProps} />
+		</section>
+		<TagsBar allTags={allTags} />
+	</div>
+</PageLayout>

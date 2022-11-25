@@ -18,7 +18,7 @@ type PaginationLink = {
 	srLabel?: string;
 };
 
-interface Post {
+interface Project {
 	title: string;
 	description: string;
 	publishDate?: Date;
@@ -32,5 +32,5 @@ export type {
 	IElement,
 	SiteMeta,
 	PaginationLink,
-	Post,
+	Project,
 };
