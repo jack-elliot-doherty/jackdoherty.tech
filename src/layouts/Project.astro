@@ -91,11 +91,12 @@ const paginationProps = {
 			<ul class="mt-4 text-xs space-y-2 text-left">
 				{
 					headings.map(({ slug, text, depth }) => {
-						console.log(text, depth);
+						const css = `ml-${2 ** depth}`;
+						console.log(css);
 						return (
-							<li class="ml- line-clamp-1 hover:text-accent">
+							<li class="line-clamp-1 hover:text-accent">
 								<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
-									<span class={`ml-${2 ** depth}`}>&#35;</span> {text}
+									<span class={css}>&#35;</span> {text}
 								</a>
 							</li>
 						);
@@ -110,7 +111,6 @@ const paginationProps = {
 </BaseLayout>
 
 <style>
-	/* Hide the weird code block adding the language */
 	:global(article pre .language-id) {
 		@apply hidden;
 	}
