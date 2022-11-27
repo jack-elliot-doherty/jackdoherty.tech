@@ -91,9 +91,7 @@ const paginationProps = {
 			<ul class="mt-4 text-xs space-y-2 text-left">
 				{
 					headings.map(({ slug, text, depth }) => {
-						console.log(text, depth);
-						// const css = `ml-${depth === 2 ? 2 : 0}`;
-						return (
+						return depth === 1 ? (
 							<li class="line-clamp-1 hover:text-accent">
 								<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
 									<span header-span id={depth}>
@@ -102,7 +100,7 @@ const paginationProps = {
 									{text}
 								</a>
 							</li>
-						);
+						) : null;
 					})
 				}
 			</ul>
@@ -119,12 +117,3 @@ const paginationProps = {
 		@apply hidden;
 	}
 </style>
-
-<script>
-	const headerSpans = document.querySelectorAll("[header-span]");
-
-	headerSpans.forEach((span) => {
-		console.log(span);
-		span.classList.add(`ml-${2 ** Number(span.id)}`);
-	});
-</script>
