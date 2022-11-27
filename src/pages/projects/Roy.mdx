@@ -1,8 +1,8 @@
 ---
 layout: "@/layouts/Project"
 title: Roy
-publishDate: 13 May 2022
-description: Automated transcription service
+publishDate: 15 May 2021
+description: Automated transcription service that I built as part of a team of 2 for a university.
 tags: ["transcription", "python", "react"]
 ---
 
@@ -15,26 +15,42 @@ tags: ["transcription", "python", "react"]
   Post processing is also performed on users transcripts to extract insights
   such as conversation summaries, key topics discussed and keywords of the conversations.
 
-- # Main Features
-
-  - ## Transcript editor
-
-        Purpose built transcript editor to allow users to tweak
-        transcripts and rename speakers. Editor follows along with
-        audio by underlining the word being spoken to allow easy editing.
-
-  - ## Search/Sort Table view
-
-        Table view of all transcripts sortable by all table headers
-        with search powered by elastic search.
-
 - # Video demo
 
 <iframe
-width="560" height="315"
+    height="250px"
+    width="100%"
     src="https://www.youtube.com/embed/Eplnbexf_NQ"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
 
 > </iframe>
+
+- # Cool Features
+
+  - ## Transcript editor
+
+        Purpose built transcript editor to allow users to tweak
+        transcripts, rename speakers, jump to keywords in the transcript and some other cool stuff.
+        Editor follows along with audio by underlining the word being spoken to allow easy editing.
+
+        <img src="/images/RoyEditorView.png"></img>
+
+  - ## Search/Sort Table view
+
+        Table view of all transcripts sortable by all table headers
+        with search powered by ElasticSearch.
+
+  - ## Call Audio recording
+
+        Users can request a Roy room and are then supplied with phone number
+        to dial. Upon dialing this number they are entered into the room -
+        a beep tone is played and thereafter all audio is recorded - it is then transcribed
+        once all users hang up.
+
+# Technologies Used
+
+- Python - Flask rest api, post-proccesing
+- React - Frontend
+- ElasticSearch - Search functionalty
