@@ -95,7 +95,7 @@ const paginationProps = {
 						return (
 							<li class="ml- line-clamp-1 hover:text-accent">
 								<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
-									<span class={`ml-${depth + 2}`}>&#35;</span> {text}
+									<span class={`ml-${2 ** depth}`}>&#35;</span> {text}
 								</a>
 							</li>
 						);
