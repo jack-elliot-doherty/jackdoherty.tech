@@ -93,9 +93,9 @@ const paginationProps = {
 					headings.map(({ slug, text, depth }) => {
 						console.log(text, depth);
 						return (
-							<li class="ml- line-clamp-2 hover:text-accent">
+							<li class="ml- line-clamp-1 hover:text-accent">
 								<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
-									<span class={`ml-${depth - 1}`}>&#35;</span> {text}
+									<span class={`ml-${depth + 2}`}>&#35;</span> {text}
 								</a>
 							</li>
 						);
