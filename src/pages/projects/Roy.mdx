@@ -1,62 +1,40 @@
 ---
 layout: "@/layouts/Project"
-title: Roy - Automatic trancription service
+title: Roy
 publishDate: 13 May 2022
-description: .
-tags: ["transcription"]
+description: Automated transcription service
+tags: ["transcription", "python", "react"]
 ---
 
-import { Image } from "@astrojs/image/components";
+- # Introduction
 
-## Hello World
+  Roy is a service that allows users to transcribe live phone calls,
+  youtube videos and other audio files and edit their transcripts using
+  our purpose built Transcript editor.
 
-Following is an example blog post written in an md file. You can find me @ src/pages/posts/hello-world.md. Here you can add/update/delete details and watch the changes live when running in develop mode.
+  Post processing is also performed on users transcripts to extract insights
+  such as conversation summaries, key topics discussed and keywords of the conversations.
 
-<Image
-	src="https://picsum.photos/id/1025/550/460"
-	alt="A covered up pug in the woods"
-	width={550}
-	height={460}
-/>
+- # Main Features
 
-## Using some markdown elements
+  - ## Transcript editor
 
-Here we have a simple js code block.
+        Purpose built transcript editor to allow users to tweak
+        transcripts and rename speakers. Editor follows along with
+        audio by underlining the word being spoken to allow easy editing.
 
-```js
-let string = "JavaScript syntax highlighting";
-```
+  - ## Search/Sort Table view
 
-This is styled by Shiki, set via the [config](https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting) for Astro.
+        Table view of all transcripts sortable by all table headers
+        with search powered by elastic search.
 
-You can choose your own theme from this [library](https://github.com/shikijs/shiki/blob/main/docs/themes.md#all-themes), which is currently set to Dracula, in the file `astro.config.mjs`.
+- # Video demo
 
-Here is a horizontal rule.
+<iframe
+width="560" height="315"
+    src="https://www.youtube.com/embed/Eplnbexf_NQ"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
 
----
-
-Here is a list:
-
-- Item number 1
-- Item number 2
-- Item number 3
-
-And an ordered list:
-
-1. James Madison
-2. James Monroe
-3. John Quincy Adams
-
-Here is a table:
-
-| Item         | Price | # In stock |
-| ------------ | :---: | ---------: |
-| Juicy Apples | 1.99  |        739 |
-| Bananas      | 1.89  |          6 |
-
-## Tailwind CSS Prose styling
-
-> I'm a simple blockquote.
-> I'm styled by Tailwind CSS prose plugin
-
-## test
+> </iframe>

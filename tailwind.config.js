@@ -34,6 +34,9 @@ module.exports = {
 				},
 				DEFAULT: {
 					css: {
+						ul: {
+							listStyle: "none",
+						},
 						a: {
 							"@apply cactus-link": "",
 						},
