@@ -1,39 +1,39 @@
-import type { MDXInstance, Post } from "./types";
+import type { MDXInstance, Project } from "./types";
 
-export function sortMDByDate(posts: MDXInstance<Post>[] = []) {
-	return posts.sort(
+export function sortMDByDate(projects: MDXInstance<Project>[] = []) {
+	return projects.sort(
 		(a, b) =>
 			new Date(b.frontmatter.publishDate).valueOf() -
 			new Date(a.frontmatter.publishDate).valueOf()
 	);
 }
 
-// This function expects the @arg posts to be sorted by sortMDByDate()
-export function getPreviousAndNextPosts(
+// This function expects the @arg projects to be sorted by sortMDByDate()
+export function getPreviousAndNextProjects(
 	currentSlug: string,
-	posts: MDXInstance<Post>[] = []
+	projects: MDXInstance<Project>[] = []
 ) {
-	const index = posts.findIndex(({ url }) => url === currentSlug);
+	const index = projects.findIndex(({ url }) => url === currentSlug);
 	return {
-		prev: posts[index + 1] ?? null,
-		next: posts[index - 1] ?? null,
+		prev: projects[index + 1] ?? null,
+		next: projects[index - 1] ?? null,
 	};
 }
 
-export function getAllTags(posts: MDXInstance<Post>[] = []) {
+export function getAllTags(projects: MDXInstance<Project>[] = []) {
 	const allTags = new Set<string>();
-	posts.forEach((post) => {
-		post.frontmatter.tags?.map((tag) => allTags.add(tag.toLowerCase()));
+	projects.forEach((project) => {
+		project.frontmatter.tags?.map((tag) => allTags.add(tag.toLowerCase()));
 	});
 	return [...allTags];
 }
 
-export function getAllTagsWithCount(posts: MDXInstance<Post>[] = []): {
+export function getAllTagsWithCount(projects: MDXInstance<Project>[] = []): {
 	[key: string]: number;
 } {
-	return posts.reduce((prev, post) => {
+	return projects.reduce((prev, project) => {
 		const currTags = { ...prev };
-		post.frontmatter.tags?.forEach(function (tag) {
+		project.frontmatter.tags?.forEach(function (tag) {
 			currTags[tag] = (currTags[tag] || 0) + 1;
 		});
 		return currTags;
