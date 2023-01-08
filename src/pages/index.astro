@@ -6,14 +6,35 @@ const meta = {
 	title: "Home",
 	description: "Home | Jack Doherty",
 };
+
+const today = new Date() as any;
+const born = new Date(942534840000) as any;
 ---
 
 <PageLayout meta={meta}>
+	<script is:inline>
+		// 		run this every second
+		setInterval(() => {
+			const today = new Date();
+			const born = new Date(942534840000);
+			document.getElementById("age").innerHTML = (
+				(today - born) /
+				(1000 * 60 * 60 * 24 * 365.25)
+			)
+				.toString()
+				.substring(0, 12);
+		}, 100);
+	</script>
 	<section>
 		<h1 class="mb-6 title">Hello!</h1>
 		<p class="mb-4">
-			I'm Jack, a <span id="age"></span> year old developer from Ireland. I studied
-			computer applications at
+			I'm Jack, a <span id="age"
+				>{
+					((today - born) / (1000 * 60 * 60 * 24 * 365.25))
+						.toString()
+						.substring(0, 12)
+				}
+			</span> year old developer from Ireland. I studied computer applications at
 			<a
 				target="_blank"
 				rel="noopener noreferrer"
@@ -82,15 +103,3 @@ const meta = {
 		</ul>
 	</section>
 </PageLayout>
-
-<script>
-	const today = new Date() as any;
-	const born = new Date(942534840000) as any;
-
-	document.getElementById("age").innerHTML = (
-		(today - born) /
-		(1000 * 60 * 60 * 24 * 365.25)
-	)
-		.toString()
-		.substring(0, 12);
-</script>
