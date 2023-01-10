@@ -1,6 +1,5 @@
 ---
 import PageLayout from "@/layouts/Base";
-import Pagination from "@/components/Paginator";
 import type { Project, Page, MDXInstance } from "@/types";
 import { getAllTags, sortMDByDate } from "src/util";
 import ProjectPreview from "@/components/ProjectPreview";
@@ -21,23 +20,8 @@ export interface Props {
 const { page, allTags } = Astro.props as Props;
 
 const meta = {
-	title: "Posts",
+	title: "Projects",
 	description: "A collection of posts by me for a starter Astro theme",
-};
-
-const paginationProps = {
-	...(page.url.prev && {
-		prevUrl: {
-			url: page.url.prev,
-			text: `← Previous Posts`,
-		},
-	}),
-	...(page.url.next && {
-		nextUrl: {
-			url: page.url.next,
-			text: `Next Posts →`,
-		},
-	}),
 };
 ---
 
@@ -54,7 +38,6 @@ const paginationProps = {
 					))
 				}
 			</ul>
-			<Pagination {...paginationProps} />
 		</section>
 		<TagsBar allTags={allTags} />
 	</div>

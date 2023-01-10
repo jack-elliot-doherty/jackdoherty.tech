@@ -1,11 +1,15 @@
 ---
 import PageLayout from "@/layouts/Base";
 import SocialList from "@/components/SocialList";
+import type { Favourite, FavouriteList } from "@/types";
 
 const meta = {
 	title: "Home",
 	description: "Home | Jack Doherty",
 };
+
+const [FavouriteList] = await Astro.glob<FavouriteList>("./favourites.mdx");
+console.log(FavouriteList.frontmatter);
 
 const today = new Date() as any;
 const born = new Date(942534840000) as any;
@@ -53,53 +57,23 @@ const born = new Date(942534840000) as any;
 	</section>
 
 	<section class="mt-16">
-		<h2 class="mb-4 text-xl title">Technologies I've been liking lately</h2>
-		<ul class="space-y-4 sm:space-y-2">
-			<li>
-				<a
-					href="https://astro.build"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-block cactus-link"
-					>Astro
-				</a>:
-				<p class="inline-block sm:mt-2">
-					Awesome static site generator, used to build this site too :)
-				</p>
-			</li>
-			<li>
-				<a
-					href="https://trpc.io/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-block cactus-link"
-					>Trpc
-				</a>:
-				<p class="inline-block sm:mt-2">
-					To build & consume fully typesafe APIs without schemas or code
-					generation.
-				</p>
-			</li>
-			<li>
-				<a
-					href="https://tailwindcss.com"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-block cactus-link"
-					>Tailwind CSS
-				</a>:
-				<p class="inline-block sm:mt-2">Inline CSS but better.</p>
-			</li>
-			<li>
-				<a
-					href="https://nextjs.org/"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="inline-block cactus-link"
-					>Next.Js
-				</a>:
-				<p class="inline-block sm:mt-2">Fullstack React framework.</p>
-			</li>
+		<h2 class="mb-4 text-xl title">Things I've been interested in lately</h2>
+		<ul class="space-y-4 sm:space-y-4">
+			{
+				FavouriteList.frontmatter.favourites.map((fav: Favourite) => (
+					<li>
+						<a
+							href={fav.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="cactus-link inline-block"
+						>
+							{fav.name}:
+						</a>
+						<p class="inline sm:mt-2">{fav.description}</p>
+					</li>
+				))
+			}
 		</ul>
 	</section>
 </PageLayout>

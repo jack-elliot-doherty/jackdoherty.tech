@@ -25,6 +25,16 @@ interface Project {
 	tags?: string[];
 }
 
+interface Favourite {
+	name: string;
+	description: string;
+	link: string;
+}
+
+interface FavouriteList {
+	favourites: Favourite[];
+}
+
 export type {
 	MDXInstance,
 	Page,
@@ -33,4 +43,6 @@ export type {
 	SiteMeta,
 	PaginationLink,
 	Project,
+	Favourite,
+	FavouriteList,
 };
