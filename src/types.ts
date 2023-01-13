@@ -18,6 +18,13 @@ type PaginationLink = {
 	srLabel?: string;
 };
 
+interface Post {
+	title: string;
+	description: string;
+	publishDate: Date;
+	tags?: string[];
+}
+
 interface Project {
 	title: string;
 	description: string;
@@ -43,6 +50,7 @@ export type {
 	SiteMeta,
 	PaginationLink,
 	Project,
+	Post,
 	Favourite,
 	FavouriteList,
 };
