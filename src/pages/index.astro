@@ -9,7 +9,6 @@ const meta = {
 };
 
 const [FavouriteList] = await Astro.glob<FavouriteList>("./favourites.mdx");
-console.log(FavouriteList.frontmatter);
 
 const today = new Date() as any;
 const born = new Date(942534840000) as any;
