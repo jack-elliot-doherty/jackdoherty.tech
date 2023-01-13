@@ -1,20 +1,25 @@
 ---
 import PageLayout from "@/layouts/Base";
-import ProjectPreview from "@/components/ProjectPreview";
 import { getAllTags, sortMDByDate } from "@/util";
-import type { MDXInstance, Page, Project } from "@/types";
+import type { MDXInstance, Page, ContentItem } from "@/types";
 import TagsBar from "@/components/TagsBar";
+import ContentPreview from "@/components/ContentPreview";
 
-const allProjects = await Astro.glob<Project>("../../projects/*.mdx");
-const allTags = getAllTags(allProjects);
+const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
+const allPosts = await Astro.glob<ContentItem>("../../posts/*.mdx");
+const allTags = getAllTags(allProjects.concat(allPosts));
 
 export async function getStaticPaths({ paginate }) {
-	const allPosts = await Astro.glob<Project>("../../projects/*.mdx");
+	const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
+	const allPosts = await Astro.glob<ContentItem>("../../posts/*.mdx");
+	const allProjectsByDate = sortMDByDate(allProjects);
 	const allPostsByDate = sortMDByDate(allPosts);
-	const allTags = getAllTags(allPostsByDate);
+	const allContent = allProjectsByDate.concat(allPostsByDate);
+	const allTags = getAllTags(allProjectsByDate.concat(allPostsByDate));
 
 	return allTags.map((tag) => {
-		const filterPosts = allPostsByDate.filter((post) =>
+		console.log("tag", allContent);
+		const filterPosts = allContent.filter((post) =>
 			post.frontmatter.tags?.includes(tag)
 		);
 		return paginate(filterPosts, {
@@ -25,16 +30,18 @@ export async function getStaticPaths({ paginate }) {
 }
 
 export interface Props {
-	page: Page<MDXInstance<Project>>;
+	page: Page<MDXInstance<ContentItem>>;
 	allTags: string[];
 }
 
 const { page } = Astro.props as Props;
 const { tag } = Astro.params;
 
+console.log("page", page);
+
 const meta = {
 	title: `Tag: ${tag}`,
-	description: `View all posts tagged with ${tag}`,
+	description: `View all posts and projects tagged with ${tag}`,
 };
 ---
 
@@ -48,7 +55,7 @@ const meta = {
 				{
 					page.data.map((p) => (
 						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
-							<ProjectPreview project={p} as="h2" withDesc />
+							<ContentPreview contentItem={p} as="h2" withDesc />
 						</li>
 					))
 				}

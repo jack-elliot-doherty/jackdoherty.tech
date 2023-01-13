@@ -1,19 +1,19 @@
 ---
 import PageLayout from "@/layouts/Base";
-import type { Post, Page, MDXInstance } from "@/types";
+import type { ContentItem, Page, MDXInstance } from "@/types";
 import { getAllTags, sortMDByDate } from "src/util";
-import PostPreview from "@/components/PostPreview";
+import ContentPreview from "@/components/ContentPreview";
 import TagsBar from "@/components/TagsBar";
 
 export async function getStaticPaths({ paginate }) {
-	const allposts = await Astro.glob<Post>("./*.mdx");
+	const allposts = await Astro.glob<ContentItem>("./*.mdx");
 	const allpostsByDate = sortMDByDate(allposts);
 	const allTags = getAllTags(allposts);
 	return paginate(allpostsByDate, { props: { allTags }, pageSize: 10 });
 }
 
 export interface Props {
-	page: Page<MDXInstance<Post>>;
+	page: Page<MDXInstance<ContentItem>>;
 	allTags: string[];
 }
 
@@ -39,7 +39,7 @@ const meta = {
 				{
 					page.data.map((p) => (
 						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
-							<PostPreview post={p} as="h2" withDesc />
+							<ContentPreview contentItem={p} as="h2" withDesc />
 						</li>
 					))
 				}

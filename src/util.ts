@@ -1,37 +1,39 @@
-import type { MDXInstance, Project } from "./types";
+import type { MDXInstance, ContentItem } from "./types";
 
-export function sortMDByDate(projects: MDXInstance<Project>[] = []) {
-	return projects.sort(
+export function sortMDByDate(contentItems: MDXInstance<ContentItem>[] = []) {
+	return contentItems.sort(
 		(a, b) =>
 			new Date(b.frontmatter.publishDate).valueOf() -
 			new Date(a.frontmatter.publishDate).valueOf()
 	);
 }
 
-// This function expects the @arg projects to be sorted by sortMDByDate()
+// This function expects the @arg contentItems to be sorted by sortMDByDate()
 export function getPreviousAndNextProjects(
 	currentSlug: string,
-	projects: MDXInstance<Project>[] = []
+	contentItems: MDXInstance<ContentItem>[] = []
 ) {
-	const index = projects.findIndex(({ url }) => url === currentSlug);
+	const index = contentItems.findIndex(({ url }) => url === currentSlug);
 	return {
-		prev: projects[index + 1] ?? null,
-		next: projects[index - 1] ?? null,
+		prev: contentItems[index + 1] ?? null,
+		next: contentItems[index - 1] ?? null,
 	};
 }
 
-export function getAllTags(projects: MDXInstance<Project>[] = []) {
+export function getAllTags(contentItems: MDXInstance<ContentItem>[] = []) {
 	const allTags = new Set<string>();
-	projects.forEach((project) => {
+	contentItems.forEach((project) => {
 		project.frontmatter.tags?.map((tag) => allTags.add(tag.toLowerCase()));
 	});
 	return [...allTags];
 }
 
-export function getAllTagsWithCount(projects: MDXInstance<Project>[] = []): {
+export function getAllTagsWithCount(
+	contentItems: MDXInstance<ContentItem>[] = []
+): {
 	[key: string]: number;
 } {
-	return projects.reduce((prev, project) => {
+	return contentItems.reduce((prev, project) => {
 		const currTags = { ...prev };
 		project.frontmatter.tags?.forEach(function (tag) {
 			currTags[tag] = (currTags[tag] || 0) + 1;

@@ -84,12 +84,7 @@ const url = new URL(Astro.request.url);
 				>Posts
 			</a>
 
-			<a
-				download
-				href="/assets/jack-doherty-resume.pdf"
-				aria-current={url.pathname === "/contact" ? "page" : false}
-				>Resume
-			</a>
+			<a download href="/assets/jack-doherty-resume.pdf">Resume</a>
 		</nav>
 	</span>
 	<ThemeToggle />

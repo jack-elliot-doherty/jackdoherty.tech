@@ -1,19 +1,19 @@
 ---
 import PageLayout from "@/layouts/Base";
-import type { Project, Page, MDXInstance } from "@/types";
+import type { ContentItem, Page, MDXInstance } from "@/types";
 import { getAllTags, sortMDByDate } from "src/util";
-import ProjectPreview from "@/components/ProjectPreview";
+import ContentPreview from "@/components/ContentPreview";
 import TagsBar from "@/components/TagsBar";
 
 export async function getStaticPaths({ paginate }) {
-	const allProjects = await Astro.glob<Project>("./*.mdx");
+	const allProjects = await Astro.glob<ContentItem>("./*.mdx");
 	const allProjectsByDate = sortMDByDate(allProjects);
 	const allTags = getAllTags(allProjects);
 	return paginate(allProjectsByDate, { props: { allTags }, pageSize: 10 });
 }
 
 export interface Props {
-	page: Page<MDXInstance<Project>>;
+	page: Page<MDXInstance<ContentItem>>;
 	allTags: string[];
 }
 
@@ -21,7 +21,7 @@ const { page, allTags } = Astro.props as Props;
 
 const meta = {
 	title: "Projects",
-	description: "A collection of posts by me for a starter Astro theme",
+	description: "A collection of projects by me",
 };
 ---
 
@@ -33,7 +33,7 @@ const meta = {
 				{
 					page.data.map((p) => (
 						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
-							<ProjectPreview project={p} as="h2" withDesc />
+							<ContentPreview contentItem={p} as="h2" withDesc />
 						</li>
 					))
 				}
