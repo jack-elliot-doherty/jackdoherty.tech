@@ -34,13 +34,30 @@ or with their email. This site doesn't store any passwords, if a user signs up w
 will receive an email with a sign in link. The site uses NextAuth to handle authentication.
 
 Once a user is signed in, they can apply for the drops. To do this they navigate to a drops page and fill
-out the application form. The application form is built with React Hook Form and the data is sent to the
-server using trpc. The server then validates the data and saves it to the database. Once a user has applied for
-a drop, they receive a confirmation email and can then not apply for that drop again.
-The admins can then review the applications and accept or reject them. The admins can also view all the
-applications and filter them by status and drop.
+out the application form.
+
+The application form is built with React Hook Form and the data is sent to the
+server using trpc. The server then validates the data and saves it to the database.
+
+Once a user has applied for a drop, they receive a confirmation email and can then not
+apply for that drop again. The admins can then review the applications and accept or reject
+them. The admins can also view all the applications and filter them by status and drop.
 
 Users can also sign up for Mayh3m newsletter. There is link to the newsletter form on the footer of every page.
 This form is also built with React Hook Form and the data is sent to the server using trpc. Users receive  
 a confirmation email after signing up for the newsletter and each mail they receive from the newsletter has an
 unsubscribe link. The admins can send out newsletter mails to all the users who have signed up for the newsletter.
+
+# Video Demo
+
+<iframe
+	width="560"
+	height="315"
+	src="https://www.youtube.com/embed/9Z9Z9Z9Z9Z9"
+	title="YouTube video player"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen
+></iframe>
+
+# Challenges and Considerations
