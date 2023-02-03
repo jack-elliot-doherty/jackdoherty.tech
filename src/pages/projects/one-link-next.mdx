@@ -1,12 +1,32 @@
 ---
 layout: "@/layouts/Project"
-title: ONE LINK
+title: One Link
 type: Project
 publishDate: 03 February 2023
+repoLink: https://github.com/jack-elliot-doherty/OneLink-Next
 description: AllMyLinks type site but no data is stored, all data is base64 encoded and used as a query param.
 tags: ["next.js", "react", "expando form"]
 ---
 
 # Introduction
 
-TBA
+This project was inspired <a href="https://excalidraw.com/" target="_blank" rel="no_refferer" >Excalidraws</a> drawing
+sharing functionality.From what I could tell from my usage of the site, the drawing data was stored in a
+database and the link was a unique identifier for the data.
+
+<img
+
+src="https://raw.githubusercontent.com/jack-elliot-doherty/jackdoherty.tech/main/public/images/excalidraw-link.PNG"
+
+/>
+
+I wanted to see if I could create a similar functionality but
+without storing any data. I also wanted to see if I could create an AllMyLinks type site but with a more design control given to the user.
+
+# The Idea
+
+The idea is to create a site where the user can create a link page with an expandable form. The form data is then base64 encoded and used as a query param. When the user visits the link, the query param is decoded and the form is populated with the data.
+
+# Video Demo
+
+<iframe></iframe>
