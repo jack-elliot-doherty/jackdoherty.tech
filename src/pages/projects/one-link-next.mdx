@@ -8,6 +8,8 @@ description: AllMyLinks type site but no data is stored, all data is base64 enco
 tags: ["next.js", "react", "expando form"]
 ---
 
+[One Link](https://one-link-next.vercel.app/)
+
 # Introduction
 
 This project was inspired <a href="https://excalidraw.com/" target="_blank" rel="no_refferer" >Excalidraws</a> drawing
@@ -25,8 +27,24 @@ without storing any data. I also wanted to see if I could create an AllMyLinks t
 
 # The Idea
 
-The idea is to create a site where the user can create a link page with an expandable form. The form data is then base64 encoded and used as a query param. When the user visits the link, the query param is decoded and the form is populated with the data.
+The idea is to create a site where the user can create a link page with details about themselves, a photo and as many links as required.
+
+This is done by creating a form with sections for personal details, social links and then other links. The social links and other links
+sections are expandable to allow the user to add as many links as they want.
+
+the final section is the colour section where the user can choose a background colour, text colour, link icon colour and other link tab colour.
+
+The form data is then base64 encoded and used as a query param for the links display page.
+When the user visits the link, the query param is decoded and the form is populated with the data.
 
 # Video Demo
 
-<iframe></iframe>
+<iframe
+	height="315px"
+	width="100%"
+	src="https://www.youtube.com/embed/JXm3Orc_eso"
+	title="YouTube video player"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen
+></iframe>
