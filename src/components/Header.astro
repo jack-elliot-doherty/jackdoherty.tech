@@ -77,17 +77,14 @@ const url = new URL(Astro.request.url);
 			</a>
 			<a
 				href="/projects"
-				aria-current={url.pathname === "/posts" ? "page" : false}
+				aria-current={url.pathname === "/projects" ? "page" : false}
 				>Projects
 			</a>
-			<a href="/posts" aria-current={url.pathname === "/posts" ? "page" : false}
-				>Posts
+			<a href="/blog" aria-current={url.pathname === "/blog" ? "page" : false}
+				>Blog
 			</a>
 
-			<a
-				href="https://github.com/jack-elliot-doherty/jackdoherty.tech/raw/main/src/assets/jack-doherty-resume.pdf"
-				>Resume</a
-			>
+			<a href="/resume">Resume</a>
 		</nav>
 	</span>
 	<ThemeToggle />

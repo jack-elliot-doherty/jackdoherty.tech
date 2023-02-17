@@ -1,0 +1,32 @@
+---
+import PageLayout from "@/layouts/Base";
+
+const meta = {
+	title: "Resume",
+	description: "Resume | Jack Doherty",
+};
+---
+
+<!-- https://github.com/jack-elliot-doherty/jackdoherty.tech/raw/main/src/assets/jack-doherty-resume.pdf -->
+<PageLayout meta={meta}>
+	<section>
+		<div class="flex justify-between">
+			<h1 class="title">Resume</h1>
+			<p>
+				<a class="cactus-link" href="/jack-doherty-resume.pdf" download
+					>Download</a
+				>
+			</p>
+		</div>
+		<object
+			class="mt-4"
+			data="/jack-doherty-resume.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0"
+			width="100%"
+			height="900px"
+		>
+			<p>Error! PDF cannot be displayed.</p>
+			<p>This might be an issue with your broswer</p>
+			<p>Try viewing this page with with Chrome.</p>
+		</object>
+	</section>
+</PageLayout>
