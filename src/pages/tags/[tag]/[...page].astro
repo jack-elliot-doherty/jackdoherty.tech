@@ -6,12 +6,12 @@ import TagsBar from "@/components/TagsBar";
 import ContentPreview from "@/components/ContentPreview";
 
 const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
-const allPosts = await Astro.glob<ContentItem>("../../posts/*.mdx");
+const allPosts = await Astro.glob<ContentItem>("../../blog/*.mdx");
 const allTags = getAllTags(allProjects.concat(allPosts));
 
 export async function getStaticPaths({ paginate }) {
 	const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
-	const allPosts = await Astro.glob<ContentItem>("../../posts/*.mdx");
+	const allPosts = await Astro.glob<ContentItem>("../../blog/*.mdx");
 	const allProjectsByDate = sortMDByDate(allProjects);
 	const allPostsByDate = sortMDByDate(allPosts);
 	const allContent = allProjectsByDate.concat(allPostsByDate);

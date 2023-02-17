@@ -4,7 +4,7 @@ import { getAllTagsWithCount } from "@/util";
 import type { ContentItem } from "@/types";
 
 const allProjects = await Astro.glob<ContentItem>("../projects/*.mdx");
-const allPosts = await Astro.glob<ContentItem>("../posts/*.mdx");
+const allPosts = await Astro.glob<ContentItem>("../blog/*.mdx");
 const allProjectTags = getAllTagsWithCount(allProjects);
 const allPostTags = getAllTagsWithCount(allPosts);
 const allTags = { ...allProjectTags, ...allPostTags };
