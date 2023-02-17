@@ -1,15 +1,13 @@
 ---
 import PageLayout from "@/layouts/Base";
 import SocialList from "@/components/SocialList";
-import type { Favourite, FavouriteList } from "@/types";
 import ContactForm from "@/components/ContactForm";
+import FavouritesList from "@/components/FavouritesList";
 
 const meta = {
 	title: "Home",
 	description: "Home | Jack Doherty",
 };
-
-const [FavouriteList] = await Astro.glob<FavouriteList>("./favourites.mdx");
 
 const today = new Date() as any;
 const born = new Date(942534840000) as any;
@@ -64,10 +62,10 @@ const born = new Date(942534840000) as any;
 			rel="noopener noreferrer"
 			class="cactus-link inline-block"
 		>
-			Idea Voting App:
+			voting-app:
 		</a>
 		<p class="inline sm:mt-2">
-			An app to allow you to vote on and suggest project / feature ideas to me.
+			App to allow you to vote on and suggest project / feature ideas to me.
 		</p>
 		<p>
 			Any submissions I think are cool or that get a lot of votes I'll be sure
@@ -76,24 +74,7 @@ const born = new Date(942534840000) as any;
 	</section>
 
 	<section class="mt-14">
-		<h2 class="mb-4 text-xl title">Things I've been interested in lately.</h2>
-		<ul class="space-y-4 sm:space-y-4">
-			{
-				FavouriteList.frontmatter.favourites.map((fav: Favourite) => (
-					<li>
-						<a
-							href={fav.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="cactus-link inline-block"
-						>
-							{fav.name}:
-						</a>
-						<p class="inline sm:mt-2">{fav.description}</p>
-					</li>
-				))
-			}
-		</ul>
+		<FavouritesList />
 	</section>
 	<section class="mt-14 w-full">
 		<ContactForm />
