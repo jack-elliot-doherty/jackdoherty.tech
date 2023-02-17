@@ -1,0 +1,16 @@
+---
+import BaseLayout from "./Base.astro";
+
+const {
+	content: { title, description },
+	headings,
+} = Astro.props;
+---
+
+<BaseLayout meta={{ title, description }}>
+	<div
+		class="mt-8 font-sans prose prose-sm prose-cactus prose-headings:font-semibold prose-headings:before:text-accent prose-headings:before:absolute prose-headings:before:-ml-4 prose-th:before:content-none"
+	>
+		<slot />
+	</div>
+</BaseLayout>
