@@ -1,6 +1,7 @@
 ---
 layout: "@/layouts/Resume"
-title: Rcdcdcdcdcesume
+title: Resume
+description: Jack Doherty | Resume
 ---
 # Jack Doherty
 

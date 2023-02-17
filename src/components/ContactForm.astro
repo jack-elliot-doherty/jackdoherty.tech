@@ -1,0 +1,49 @@
+<h1 class="mb-4 title">Send me a message!</h1>
+<form
+	class="flex flex-col space-y-2 w-full text-current"
+	name="contact"
+	method="POST"
+	action="/success"
+	data-netlify="true"
+	netlify-honeypot="bot-field"
+>
+	<input
+		type="hidden"
+		name="subject"
+		value="Contact form submission from jackdoherty.tech"
+	/>
+	<p class="hidden">
+		<label>
+			Do not fill this out if you are human: <input name="bot-field" />
+		</label>
+	</p>
+	<input
+		required
+		class="p-2 w-full dark:bg-stone-900 bg-stone-200"
+		placeholder="Name"
+		type="text"
+		name="name"
+	/>
+	<input
+		required
+		class="p-2 w-full dark:bg-stone-900 bg-stone-200"
+		type="email"
+		name="email"
+		placeholder="Email"
+	/>
+
+	<p>
+		<textarea
+			required
+			class="w-full h-20 p-2 dark:bg-stone-900 bg-stone-200"
+			placeholder="Write a message..."
+			name="message"></textarea>
+	</p>
+
+	<p>
+		<button
+			class="text-bgColor hover:opacity-50 font-semibold bg-accent flex items-center justify-center rounded-lg p-1 px-3"
+			type="submit">Send</button
+		>
+	</p>
+</form>
