@@ -55,9 +55,10 @@ const born = new Date(942534840000) as any;
 		<SocialList />
 	</section>
 
-	<section class="mt-8">
-		<h1 class="mb-6 title">Get in touch</h1>
+	<section class="mt-8 w-full">
+		<h1 class="mb-4 title">Send me a message!</h1>
 		<form
+			class="flex flex-col space-y-2 w-full"
 			name="contact"
 			method="POST"
 			action="/success"
@@ -74,23 +75,34 @@ const born = new Date(942534840000) as any;
 					Do not fill this out if you are human: <input name="bot-field" />
 				</label>
 			</p>
-			<p>
-				<label class=""
-					>Your Name:
+			<input
+				required
+				class="p-2 w-full"
+				placeholder="Name"
+				type="text"
+				name="name"
+			/>
+			<input
+				required
+				class="p-2 w-full"
+				type="email"
+				name="email"
+				placeholder="Email"
+			/>
 
-					<input class="" type="text" name="name" />
-				</label>
-			</p>
 			<p>
-				<label>Your Email: <input type="email" name="email" /></label>
-			</p>
-
-			<p>
-				<label>Message: <textarea name="message"></textarea></label>
+				<textarea
+					required
+					class="w-full h-20 p-2"
+					placeholder="Message"
+					name="message"></textarea>
 			</p>
 
 			<p>
-				<button type="submit">Send</button>
+				<button
+					class="text-bgColor bg-accent flex items-center justify-center rounded-lg p-1 px-3"
+					type="submit">Send</button
+				>
 			</p>
 		</form>
 	</section>
@@ -115,7 +127,7 @@ const born = new Date(942534840000) as any;
 	</section>
 
 	<section class="mt-14">
-		<h2 class="mb-4 text-xl title">Things I've been interested in lately</h2>
+		<h2 class="mb-4 text-xl title">Things I've been interested in lately.</h2>
 		<ul class="space-y-4 sm:space-y-4">
 			{
 				FavouriteList.frontmatter.favourites.map((fav: Favourite) => (
