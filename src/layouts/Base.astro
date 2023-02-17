@@ -17,6 +17,18 @@ const {
 
 <html lang={siteMeta.lang}>
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMDHY5KYB5"
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-FMDHY5KYB5");
+		</script>
 		<BaseHead title={title} description={description} image={image} />
 		<script define:vars={{ siteMeta }}>
 			const root = document.documentElement;
