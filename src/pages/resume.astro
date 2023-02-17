@@ -9,7 +9,7 @@ const meta = {
 
 <PageLayout meta={meta}>
 	<section>
-		<div class="flex justify-between">
+		<div class="sm:flex justify-between">
 			<h1 class="title">Resume</h1>
 			<p>
 				<a class="cactus-link" href="/jack-doherty-resume.pdf" download
@@ -18,38 +18,44 @@ const meta = {
 			</p>
 		</div>
 	</section>
-	<section class="mt-10 text-base border p-10">
-		<h1 class="text-3xl title">Jack Doherty</h1>
-		<div class="page-body">
-			<div class="flex justify-between">
+	<section class="mt-1 font-sans text-base">
+		<h1 class="text-4xl title">Jack Doherty</h1>
+		<div class="page-body mt-8">
+			<div class="sm:flex justify-between">
 				<div class="column w-full">
 					<p class=""></p><p class="highlight-gray">
 						Software Engineer at
 						<a href="https://www.ericsson.com/en"
-							><span class="highlight-gray"> Ericsson</span>
+							><span class="cactus-link"> Ericsson</span>
 						</a>
 					</p>
 				</div><div style="width:100%" class="column">
-					<p class="">
+					<p>
 						📧 <a
+							class="cactus-link"
 							href="mailto:jack@jackdoherty.tech?subject=Hey!%20Saw%20your%20resume!"
-							>jack@jackdoherty.tech</a
+							>jack@jackdoherty.tech
+						</a>
+					</p><p>
+						🌐 <a class="cactus-link" href="https://jackdoherty.tech/"
+							>jackdoherty.tech</a
 						>
-					</p><p class="">
-						🌐 <a href="https://jackdoherty.tech/">jackdoherty.tech</a>
-					</p><p class="">
-						🔗 <a href="https://www.linkedin.com/in/jack-doherty-405/"
-							>LinkedIn</a
+					</p><p>
+						🔗 <a
+							class="cactus-link"
+							href="https://www.linkedin.com/in/jack-doherty-405/">LinkedIn</a
 						>
-					</p><p class="">
-						💻 <a href="https://github.com/jack-elliot-doherty">Github</a>
+					</p><p>
+						💻 <a
+							class="cactus-link"
+							href="https://github.com/jack-elliot-doherty">Github</a
+						>
 					</p>
 				</div>
 			</div>
 
-			<h2 class="text-2xl font-semibold">👨&zwj;💻 About Me</h2><hr /><p
-				class=""
-			>
+			<h2 class="text-2xl mt-8 mb-2 font-semibold">👨&zwj;💻 About Me</h2><hr
+			/><p class="mt-4">
 				I’m a software engineer currently working at Ericsson with a knack for
 				problem solving through programming. I love the processes of planning,
 				design and implementation that goes into the software development
@@ -57,15 +63,11 @@ const meta = {
 				daily tasks or just to have fun and learn new technologies.
 			</p>
 
-			<hr />
-
-			<h2 class="text-2xl font-semibold">
-				<strong>👩🏻&zwj;💻 Experience</strong>
-			</h2>
+			<h2 class="text-2xl mt-8 mb-2 font-semibold">👩🏻&zwj;💻 Experience</h2>
 			<hr />
 
 			<h3 class="">Software Engineer</h3>
-			<div class="flex justify-between">
+			<div class="sm:flex justify-between">
 				<div style="width:100%" class="column">
 					<p class="">Ericsson, Athlone</p>
 				</div><div style="width:12.50000000000004%" class="column">
@@ -144,11 +146,11 @@ const meta = {
 					(Spring, React)
 				</li>
 			</ul><hr /><h3 class="">Junior Software Developer</h3><div
-				class="flex justify-between"
+				class="sm:flex justify-between"
 			>
 				<div style="width:112.5%" class="column">
 					<p class="">Aryza/Vision Blue Solutions, Dublin</p>
-				</div><div style="width:12.499999999999995%" class="column">
+				</div><div class="column">
 					<p class="">May 2020 - Sept 2020</p>
 				</div>
 			</div><p class="">
@@ -169,7 +171,7 @@ const meta = {
 					allow for tracking of changes and version rollback
 				</li>
 			</ul><hr /><h3 class="">Python Tutor</h3><div
-				class="flex justify-between"
+				class="sm:flex justify-between"
 			>
 				<div style="width:106.25%" class="column">
 					<p class="">
@@ -196,14 +198,13 @@ const meta = {
 					Evaluated and documented student progress, recommending methods to
 					improve tutoring.
 				</li>
-			</ul><hr /><div class="flex justify-between"></div><h1
-				class="text-2xl font-semibold"
-			>
-				🎓<strong> </strong>Education
-			</h1><hr /><h3 class="">
+			</ul><hr /><div class="sm:flex justify-between"></div>
+			<h2 class="text-2xl mt-8 mb-2 font-semibold">🎓 Education</h2>
+			<hr />
+			<h3 class="mt-4">
 				Bachelor of Science (B.S.) Computer Applications and Software
 				Engineering
-			</h3><div class="flex justify-between">
+			</h3><div class="sm:flex justify-between">
 				<div style="width:118.75%" class="column">
 					<p class="">Dublin City University, Dublin</p>
 				</div><div style="width:12.50000000000001%" class="column">
@@ -216,7 +217,7 @@ const meta = {
 					algorithms, data-structures etc.
 				</li>
 			</ul><hr /><h3 class="">Exchange semester</h3><div
-				class="flex justify-between"
+				class="sm:flex justify-between"
 			>
 				<div style="width:118.75%" class="column">
 					<p class="">Johannes Kepler University, Linz</p>
@@ -228,9 +229,9 @@ const meta = {
 					Coursework in data structures and algorithms, machine learning
 					techniques (supervised and unsupervised) and AI
 				</li>
-			</ul><hr /><div class="flex justify-between">
+			</ul><hr /><div class="sm:flex justify-between">
 				<div style="width:100%" class="column">
-					<h2 class="text-2xl font-semibold">🛠 Skills</h2><hr /><div
+					<h2 class="text-2xl mt-8 mb-2 font-semibold">🛠 Skills</h2><hr /><div
 						class="flex justify-between"
 					>
 						<div style="width:100%" class="column">
@@ -292,11 +293,10 @@ const meta = {
 						</div>
 					</div>
 				</div><div style="width:100%" class="column">
-					<h2 class="text-2xl font-semibold">📝 Certifications</h2><hr /><h3
+					<h2 class="text-2xl mt-8 mb-2 font-semibold">📝 Certifications</h2><hr
+					/><h3 class="">Kubernetes &amp; Helm admin course completion</h3><p
 						class=""
 					>
-						Kubernetes &amp; Helm admin course completion
-					</h3><p class="">
 						<em>Component Safe</em>
 					</p>
 				</div>
