@@ -94,16 +94,20 @@ const projectDate = getLocaleTime(date);
 			<ul class="mt-4 text-xs space-y-2 text-left">
 				{
 					headings.map(({ slug, text, depth }) => {
-						return depth === 1 ? (
+						return (
 							<li class="line-clamp-1 hover:text-accent">
-								<a href={`#${slug}`} aria-label={`Scroll to section: ${text}`}>
+								<a
+									style={`margin-left: ${(depth - 1) * 15}px;`}
+									href={`#${slug}`}
+									aria-label={`Scroll to section: ${text}`}
+								>
 									<span header-span id={depth}>
 										&#35;
 									</span>{" "}
 									{text}
 								</a>
 							</li>
-						) : null;
+						);
 					})
 				}
 			</ul>
