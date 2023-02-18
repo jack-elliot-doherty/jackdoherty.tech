@@ -15,9 +15,9 @@ description: Jack Doherty | Resume
 
 ## **Experience**
 
-<!-- --- -->
+---
 
-**Software Engineer**
+### Software Engineer
 
 Ericsson
 
@@ -40,7 +40,7 @@ Ericsson
     - Reducing time to asses CNM of all departments from ~2 weeks to 1 day.
 - Managed and maintained ~190 Kubernetes instances on OpenStack Clouds
 
-**Software Engineer**
+### Software Engineer
 
 Vision Blue Solutions, Dublin
 
@@ -56,7 +56,7 @@ Vision Blue Solutions, Dublin
     - Allowing for logging of changes
     - Enabling version rollback
 
-**Python Tutor**
+### Python Tutor
 
 Dublin City University, Dublin
 
@@ -69,7 +69,7 @@ Dublin City University, Dublin
 
 ## Education
 
-<!-- --- -->
+---
 
 **Dublin City University - (B.S.) Computer Applications and Software Engineering**
 
@@ -85,27 +85,27 @@ Linz, Austria
 
 ## Skills
 
-<!-- --- -->
+---
 
-- Typescript
-- Trpc
-- NextJS
-- React
-- HTML5 / CSS3
-- Express
-- Python
+1. Typescript
+2. Trpc
+3. NextJS
+4. React
+5. HTML5 / CSS3
+6. Express
+7. Python
 
-- Jenkins
-- Jest
-- Cypress
-- K8s
-- Docker
-- Postgres
-- Flask
+8. Jenkins
+9. Jest
+10. Cypress
+11. K8s
+12. Docker
+13. Postgres
+14. Flask
 
-- Agile
-- CI/CD
-- Git
-- Automated testing
-- Code Review
-- Design Patterns
+15. Agile
+16. CI/CD
+17. Git
+18. Automated testing
+19. Code Review
+20. Design Patterns

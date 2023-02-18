@@ -32,10 +32,6 @@ interface Favourite {
 	link: string;
 }
 
-interface FavouriteList {
-	favourites: Favourite[];
-}
-
 export type {
 	MDXInstance,
 	Page,
@@ -45,5 +41,4 @@ export type {
 	PaginationLink,
 	ContentItem,
 	Favourite,
-	FavouriteList,
 };

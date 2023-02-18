@@ -3,7 +3,6 @@ import type { SiteMeta } from "@/types";
 import BaseHead from "@/components/BaseHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SkipLink from "@/components/SkipLink";
 import siteMeta from "src/site-meta.config";
 
 export type Props = {
@@ -55,7 +54,6 @@ const {
 		</script>
 	</head>
 	<body>
-		<SkipLink />
 		<Header />
 		<main id="main" class="flex-1">
 			<slot />

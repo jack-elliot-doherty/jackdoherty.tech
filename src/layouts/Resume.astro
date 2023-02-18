@@ -3,13 +3,12 @@ import BaseLayout from "./Base.astro";
 
 const {
 	content: { title, description },
-	headings,
 } = Astro.props;
 ---
 
 <BaseLayout meta={{ title, description }}>
 	<div
-		class="mt-8 font-sans prose prose-sm prose-cactus prose-headings:font-semibold prose-headings:before:text-accent prose-headings:before:absolute prose-headings:before:-ml-4 prose-th:before:content-none"
+		class="prose-ol:columns-3 prose-ol:list-none prose-strong:font-bold prose-h2:mb-2 prose-p:my-2 w-full max-w-full prose-hr:mb-4 prose-hr:border-solid prose-ul:list-disc font-sans-serif prose prose-sm prose-cactus prose-headings:font-bold prose-headings:before:text-accent prose-headings:before:absolute prose-headings:before:-ml-4 prose-th:before:content-none"
 	>
 		<slot />
 	</div>
