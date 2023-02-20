@@ -9,7 +9,7 @@ export async function getStaticPaths({ paginate }) {
 	const allProjects = await Astro.glob<ContentItem>("./*.mdx");
 	const allPublishedProjects = allProjects.filter((p) => !p.frontmatter.draft);
 	const allProjectsByDate = sortMDByDate(allPublishedProjects);
-	const allTags = getAllTags(allProjects);
+	const allTags = getAllTags(allPublishedProjects);
 	return paginate(allProjectsByDate, { props: { allTags }, pageSize: 10 });
 }
 
