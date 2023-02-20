@@ -4,9 +4,13 @@ import { getAllTagsWithCount } from "@/util";
 import type { ContentItem } from "@/types";
 
 const allProjects = await Astro.glob<ContentItem>("../projects/*.mdx");
+const allPublishedProjects = allProjects.filter(
+	(project) => !project.frontmatter.draft
+);
 const allPosts = await Astro.glob<ContentItem>("../blog/*.mdx");
-const allProjectTags = getAllTagsWithCount(allProjects);
-const allPostTags = getAllTagsWithCount(allPosts);
+const allPublishedPosts = allPosts.filter((post) => !post.frontmatter.draft);
+const allProjectTags = getAllTagsWithCount(allPublishedProjects);
+const allPostTags = getAllTagsWithCount(allPublishedPosts);
 const allTags = { ...allProjectTags, ...allPostTags };
 
 const meta = {
