@@ -24,6 +24,7 @@ interface ContentItem {
 	publishDate: Date;
 	type: "Post" | "Project";
 	tags?: string[];
+	draft?: boolean;
 }
 
 interface Favourite {

@@ -36,11 +36,15 @@ const meta = {
 		<section aria-label="Blog post list">
 			<ul class="text-left space-y-8">
 				{
-					page.data.map((p) => (
-						<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
-							<ContentPreview contentItem={p} as="h2" withDesc />
-						</li>
-					))
+					page.data.map((p) => {
+						if (!p.frontmatter.draft) {
+							return (
+								<li class="[&_q]:w-full flex flex-wrap items-center gap-x-2">
+									<ContentPreview contentItem={p} as="h2" withDesc />
+								</li>
+							);
+						}
+					})
 				}
 			</ul>
 		</section>
