@@ -6,8 +6,10 @@ import TagsBar from "@/components/TagsBar";
 import ContentPreview from "@/components/ContentPreview";
 
 const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
+const allPublishedProjects = allProjects.filter((p) => !p.frontmatter.draft);
 const allPosts = await Astro.glob<ContentItem>("../../blog/*.mdx");
-const allTags = getAllTags(allProjects.concat(allPosts));
+const allPublishedPosts = allPosts.filter((p) => !p.frontmatter.draft);
+const allTags = getAllTags(allPublishedProjects.concat(allPublishedPosts));
 
 export async function getStaticPaths({ paginate }) {
 	const allProjects = await Astro.glob<ContentItem>("../../projects/*.mdx");
