@@ -1,82 +1,235 @@
 ---
-import PageLayout from "@/layouts/Base";
-import SocialList from "@/components/SocialList";
-import ContactForm from "@/components/ContactForm";
-import FavouritesList from "@/components/FavouritesList";
+import siteMeta from "src/site-meta.config";
+import BaseHead from "@/components/BaseHead";
 
 const meta = {
-	title: "Home",
-	description: "Home | Jack Doherty",
+	title: "Jack Doherty",
+	description: "Software engineer available for projects.",
 };
-
-const today = new Date() as any;
-const born = new Date(942534840000) as any;
 ---
 
-<PageLayout meta={meta}>
-	<script is:inline>
-		// 		run this every second
-		setInterval(() => {
-			const today = new Date();
-			const born = new Date(942534840000);
-			document.getElementById("age").innerHTML = (
-				(today - born) /
-				(1000 * 60 * 60 * 24 * 365.25)
-			)
-				.toString()
-				.substring(0, 12);
-		}, 100);
-	</script>
-	<section>
-		<h1 class="mb-6 title">Hello!</h1>
-		<p class="mb-4">
-			I'm Jack, a <span id="age"
-				>{
-					((today - born) / (1000 * 60 * 60 * 24 * 365.25))
-						.toString()
-						.substring(0, 12)
-				}
-			</span> year old developer from Ireland. I studied computer applications at
-			<a
-				target="_blank"
-				rel="noopener noreferrer"
-				href="https://www.dcu.ie/"
-				class="cactus-link">DCU</a
-			>
-			and I'm currently working as a software engineer at
-			<a
-				target="_blank"
-				rel="noopener noreferrer"
-				class="cactus-link"
-				href="https://www.ericsson.com/en">Ericsson</a
-			>.
-		</p>
-		<SocialList />
-	</section>
+<html lang={siteMeta.lang}>
+	<head>
+		<BaseHead title={meta.title} description={meta.description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<header>
+				<h1>Jack Doherty</h1>
+				<p class="tagline">Software engineer · Ireland → Germany</p>
+			</header>
 
-	<section class="mt-10 space-y-2">
-		<h2 class="mb-4 text-xl title">Want to suggest something I could build?</h2>
-		<a
-			href="https://project-idea-voting-app.vercel.app/"
-			target="_blank"
-			rel="noopener noreferrer"
-			class="cactus-link inline-block"
-		>
-			voting-app:
-		</a>
-		<p class="inline sm:mt-2">
-			App to allow you to vote on and suggest project / feature ideas to me.
-		</p>
-		<p>
-			Any submissions I think are cool or that get a lot of votes I'll be sure
-			to build.
-		</p>
-	</section>
+			<section class="intro">
+				<p>
+					I build software products. Currently making <a href="https://usetoss.com" target="_blank" rel="noopener noreferrer">Toss</a>, 
+					a Mac app that turns meetings into completed tasks.
+				</p>
+			</section>
 
-	<section class="mt-14">
-		<FavouritesList />
-	</section>
-	<section class="mt-14 w-full">
-		<ContactForm />
-	</section>
-</PageLayout>
+			<section class="contact">
+				<p class="available">Available for projects</p>
+				<a href="mailto:youcangetjack@gmail.com" class="email-button">
+					youcangetjack@gmail.com
+				</a>
+			</section>
+
+			<section class="work">
+				<h2>Work</h2>
+				
+				<div class="work-item">
+					<a href="https://usetoss.com" target="_blank" rel="noopener noreferrer" class="work-link">
+						<span class="work-title">Toss</span>
+						<span class="work-arrow">↗</span>
+					</a>
+					<p class="work-desc">Mac app that records meetings and uses AI to automatically complete action items.</p>
+				</div>
+
+				<div class="work-item">
+					<span class="work-title">Voice AI agents</span>
+					<p class="work-desc">Production systems handling real phone calls for businesses — booking, support, automation.</p>
+				</div>
+
+				<div class="work-item">
+					<span class="work-title">Startup products</span>
+					<p class="work-desc">Automation tools, document processors, CRMs, notes apps, AI email assistants.</p>
+				</div>
+			</section>
+
+			<footer>
+				<a href="https://github.com/jack-elliot-doherty" target="_blank" rel="noopener noreferrer">GitHub</a>
+				<a href="https://linkedin.com/in/jack-doherty-405" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+				<a href="https://x.com/jelliotdoherty" target="_blank" rel="noopener noreferrer">Twitter</a>
+			</footer>
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-size: 17px;
+	}
+
+	body {
+		font-family: 'Inter', -apple-system, sans-serif;
+		background: #fefefe;
+		color: #111;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	main {
+		max-width: 540px;
+		margin: 0 auto;
+		padding: 4rem 2rem 3rem;
+	}
+
+	header {
+		margin-bottom: 1.5rem;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		margin-bottom: 0.25rem;
+	}
+
+	.tagline {
+		color: #666;
+		font-size: 0.875rem;
+	}
+
+	h2 {
+		font-size: 0.75rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 1rem;
+		color: #999;
+	}
+
+	section {
+		margin-bottom: 2rem;
+	}
+
+	.intro p {
+		font-size: 1rem;
+		color: #333;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: #ccc;
+		text-underline-offset: 3px;
+		transition: text-decoration-color 0.15s;
+	}
+
+	a:hover {
+		text-decoration-color: #111;
+	}
+
+	.contact {
+		margin-bottom: 2.5rem;
+	}
+
+	.available {
+		color: #666;
+		font-size: 0.85rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.email-button {
+		display: inline-block;
+		background: #111;
+		color: #fff;
+		padding: 0.7rem 1.25rem;
+		border-radius: 6px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: background 0.15s;
+	}
+
+	.email-button:hover {
+		background: #333;
+	}
+
+	.work {
+		border-top: 1px solid #eee;
+		padding-top: 1.5rem;
+	}
+
+	.work-item {
+		margin-bottom: 1.25rem;
+	}
+
+	.work-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.work-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+		text-decoration: none;
+	}
+
+	.work-link:hover .work-title {
+		text-decoration: underline;
+	}
+
+	.work-title {
+		font-weight: 500;
+		font-size: 0.9rem;
+		color: #111;
+	}
+
+	.work-arrow {
+		color: #999;
+		font-size: 0.8rem;
+	}
+
+	.work-desc {
+		color: #666;
+		font-size: 0.85rem;
+		margin-top: 0.2rem;
+	}
+
+	footer {
+		display: flex;
+		gap: 1.25rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid #eee;
+		margin-top: 1rem;
+	}
+
+	footer a {
+		color: #888;
+		font-size: 0.8rem;
+		text-decoration: none;
+	}
+
+	footer a:hover {
+		color: #111;
+	}
+
+	@media (max-width: 600px) {
+		html {
+			font-size: 16px;
+		}
+
+		main {
+			padding: 3rem 1.5rem 2rem;
+		}
+	}
+</style>
