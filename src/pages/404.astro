@@ -1,12 +1,24 @@
 ---
-import PageLayout from "@/layouts/Base";
+import BaseHead from "@/components/BaseHead";
+import siteMeta from "src/site-meta.config";
 
 const meta = {
-	title: "Oops!",
-	description: "404 | Oops something went wrong",
+	title: "404 | Jack Doherty",
+	description: "Page not found",
 };
 ---
 
-<PageLayout meta={meta}>
-	<h1 class="mb-6 title">404 | Oops something went wrong</h1>
-</PageLayout>
+<html lang={siteMeta.lang}>
+	<head>
+		<BaseHead title={meta.title} description={meta.description} />
+	</head>
+	<body class="font-sans text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 min-h-screen flex flex-col items-center justify-center p-8">
+		<main class="text-center space-y-6">
+			<h1 class="text-6xl font-bold text-gray-900 dark:text-white">404</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-400">Page not found</p>
+			<a href="/" class="inline-block text-blue-600 dark:text-blue-400 hover:underline font-medium">
+				← Back home
+			</a>
+		</main>
+	</body>
+</html>
