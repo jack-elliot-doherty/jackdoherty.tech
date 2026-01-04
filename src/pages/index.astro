@@ -31,9 +31,14 @@ const meta = {
 
 			<section class="contact">
 				<p class="available">Available for projects</p>
-				<a href="mailto:youcangetjack@gmail.com" class="email-button">
-					youcangetjack@gmail.com
-				</a>
+				<div class="contact-buttons">
+					<a href="mailto:youcangetjack@gmail.com" class="email-button">
+						youcangetjack@gmail.com
+					</a>
+					<a href="https://cal.com/youcangetjack-gmail/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" class="book-button">
+						Book a call
+					</a>
+				</div>
 			</section>
 
 			<section class="work">
@@ -162,6 +167,30 @@ const meta = {
 
 	.email-button:hover {
 		background: #333;
+	}
+
+	.contact-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+
+	.book-button {
+		display: inline-block;
+		background: #fff;
+		color: #111;
+		padding: 0.7rem 1.25rem;
+		border-radius: 6px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		text-decoration: none;
+		border: 1px solid #ddd;
+		transition: border-color 0.15s, background 0.15s;
+	}
+
+	.book-button:hover {
+		border-color: #111;
+		background: #fafafa;
 	}
 
 	.work {
