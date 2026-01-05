@@ -30,37 +30,49 @@ const meta = {
 			</section>
 
 			<section class="contact">
-				<p class="available">Available for projects</p>
+				<p class="available">Taking on 1–2 projects this quarter</p>
 				<div class="contact-buttons">
-					<a href="mailto:youcangetjack@gmail.com" class="email-button">
-						youcangetjack@gmail.com
+					<a href="https://cal.com/youcangetjack-gmail/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" class="book-button-primary">
+						Book a 15-min call
 					</a>
-					<a href="https://cal.com/youcangetjack-gmail/15min?overlayCalendar=true" target="_blank" rel="noopener noreferrer" class="book-button">
-						Book a call
+					<a href="mailto:youcangetjack@gmail.com" class="email-button-secondary">
+						or email me
 					</a>
 				</div>
+				<p class="contact-note">Have a weird idea? I want to hear it.</p>
 			</section>
 
 			<section class="work">
-				<h2>Work</h2>
-				
+				<h2>What I build</h2>
+
 				<div class="work-item">
 					<a href="https://usetoss.com" target="_blank" rel="noopener noreferrer" class="work-link">
 						<span class="work-title">Toss</span>
 						<span class="work-arrow">↗</span>
 					</a>
-					<p class="work-desc">Mac app that records meetings and uses AI to automatically complete action items.</p>
+					<p class="work-desc">My side project — a Mac app that records meetings and uses AI to complete your action items.</p>
 				</div>
 
 				<div class="work-item">
-					<span class="work-title">Voice AI agents</span>
-					<p class="work-desc">Production systems handling real phone calls for businesses — booking, support, automation.</p>
+					<a href="https://lynq.ai" target="_blank" rel="noopener noreferrer" class="work-link">
+						<span class="work-title">Lynq AI</span>
+						<span class="work-arrow">↗</span>
+					</a>
+					<p class="work-desc">My day job — building voice AI agents that handle real phone calls for businesses.</p>
 				</div>
 
 				<div class="work-item">
-					<span class="work-title">Startup products</span>
-					<p class="work-desc">Automation tools, document processors, CRMs, notes apps, AI email assistants.</p>
+					<span class="work-title">Full-stack apps</span>
+					<p class="work-desc">Automation tools, document processors, CRMs, AI assistants. The usual startup stack.</p>
 				</div>
+			</section>
+
+			<section class="looking-for">
+				<h2>Looking to build</h2>
+				<p class="looking-desc">
+					Interesting side projects, weird ideas, things that shouldn't exist but would be fun to make.
+					I'm especially into voice/AI stuff, but open to anything creative.
+				</p>
 			</section>
 
 			<footer>
@@ -160,7 +172,7 @@ const meta = {
 		gap: 0.75rem;
 	}
 
-	.email-button {
+	.book-button-primary {
 		display: inline-block;
 		background: #111;
 		color: #fff;
@@ -172,25 +184,26 @@ const meta = {
 		transition: background 0.15s;
 	}
 
-	.email-button:hover {
+	.book-button-primary:hover {
 		background: #333;
 	}
 
-	.book-button {
-		display: inline-block;
-		background: #fff;
-		color: #111;
-		padding: 0.75rem 1.5rem;
-		border-radius: 100px;
+	.email-button-secondary {
+		color: #666;
 		font-size: 0.9rem;
-		font-weight: 500;
 		text-decoration: none;
-		border: 1px solid #e5e5e5;
-		transition: border-color 0.15s, background 0.15s;
+		transition: color 0.15s;
 	}
 
-	.book-button:hover {
-		border-color: #111;
+	.email-button-secondary:hover {
+		color: #111;
+	}
+
+	.contact-note {
+		margin-top: 0.75rem;
+		font-size: 0.85rem;
+		color: #888;
+		font-style: italic;
 	}
 
 	.work {
@@ -232,6 +245,16 @@ const meta = {
 		color: #666;
 		font-size: 0.85rem;
 		margin-top: 0.2rem;
+	}
+
+	.looking-for {
+		margin-bottom: 2rem;
+	}
+
+	.looking-desc {
+		color: #444;
+		font-size: 0.95rem;
+		line-height: 1.7;
 	}
 
 	footer {
