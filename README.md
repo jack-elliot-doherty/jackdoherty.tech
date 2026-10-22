@@ -1,27 +1,13 @@
-<p align="center">
-  <img alt="Astro Theme Cactus logo" src="./public/images/astro-theme-cactus.png" width="70" />
-</p>
-<h1 align="center">
-  jackdoherty.tech 🚀🌵
-</h1>
+# jackdoherty.tech
 
-### 💻 [Live Demo](http://jackdoherty.tech/) hosted on Netlify
+My personal site. Plain HTML and CSS in `public/`, with no build step or packages.
 
-## Features
+Run locally with Python 3:
 
-Made with Astro, Typescript, and TailwindCSS
+```sh
+python3 -m http.server 3000 --bind 127.0.0.1 --directory public
+```
 
-- Astro Fast 🚀
-- Accessible, semantic HTML markup
-- Responsive & SEO-friendly
-- [Astro Image Integration](https://docs.astro.build/en/guides/integrations-guide/image/) for optimised images
-- MDX posts
-- Pagination
-- Theming colour modes with Tailwind and CSS variables
-- Shiki code syntax styling
-- Auto-generated sitemap
+Open [localhost:3000](http://127.0.0.1:3000/). Edit `public/index.html` or `public/styles.css`, then refresh the page.
 
-
-## License
-
-Licensed under the MIT License, Copyright © 2022
+`vercel.json` configures Vercel to serve `public/` directly. Keep the custom domain attached to the same Vercel project.
